@@ -1,0 +1,89 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--追加参数区分大小写 -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate?createDatabaseIfNotExist=true
+		</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">12345</property>
+		<!-- 在控制台输出SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 当前session作用范围策略 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!--自动映射数据表策略 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 针对特定关系数据库优化SQL语句，方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		 <property name="hibernate.format_sql">true</property>
+
+		<!-- example01，基本映射 -->
+		 <!--<mapping class="com.example01.entity.User"></mapping>-->
+		<!-- example02，table unique -->
+		 <mapping class="com.example02.entity.User"></mapping>
+		<!-- exampe03, column, timestamp -->
+		<!-- <mapping class="com.example03.timestamp.entity.User"></mapping> -->
+
+		<!-- 双向 one to many -->
+		<!-- <mapping class="com.example04.bidirectional.onetomany.entity.User"></mapping>
+			<mapping class="com.example04.bidirectional.onetomany.entity.Address"></mapping> -->
+
+		<!-- 双向 one to one，基于外键 -->
+		<!-- <mapping class="com.example05.bidirectional.onetoone.entity.User"></mapping>
+			<mapping class="com.example05.bidirectional.onetoone.entity.Address"></mapping> -->
+
+		<!-- 双向many to many -->
+		<!-- <mapping class="com.example06.bidirectional.manytomany.entity.User"></mapping>
+			<mapping class="com.example06.bidirectional.manytomany.entity.Address"></mapping> -->
+
+		<!-- 双向many to many2 -->
+		<!-- <mapping class="com.example06.bidirectional.manytomany2.entity.User"></mapping>
+			<mapping class="com.example06.bidirectional.manytomany2.entity.Address"></mapping> 
+			<mapping class="com.example06.bidirectional.manytomany2.entity.UserAddress"></mapping> -->
+
+		<!-- inheritance singletable -->
+		<!-- <mapping class="com.example07.inheritance.singletable.entity.Person"></mapping> 
+			<mapping class="com.example07.inheritance.singletable.entity.Teacher"></mapping> 
+			<mapping class="com.example07.inheritance.singletable.entity.Student"></mapping> -->
+
+		<!-- inheritance joined -->
+		<!-- <mapping class="com.example08.inheritance.joined.entity.Person"></mapping> 
+			<mapping class="com.example08.inheritance.joined.entity.Teacher"></mapping> 
+			<mapping class="com.example08.inheritance.joined.entity.Student"></mapping> -->
+
+		<!--inheritance table per class -->
+		<!-- <mapping class="com.example09.inheritance.perclass.entity.Person"></mapping> 
+			<mapping class="com.example09.inheritance.perclass.entity.Teacher"></mapping> 
+			<mapping class="com.example09.inheritance.perclass.entity.Student"></mapping> -->
+
+		<!-- Object States -->
+		<!-- <mapping class="com.example10.objectstates.entity.User"></mapping> -->
+
+		<!-- casade -->
+		<!-- <mapping class="com.example11.casade.entity.User"></mapping> 
+				<mapping class="com.example11.casade.entity.Address"></mapping> -->
+
+		<!-- fetch -->
+		<!-- <mapping class="com.example12.fetch.entity.User"></mapping>
+		<mapping class="com.example12.fetch.entity.Address"></mapping> -->
+		
+		<!-- JPQL  -->
+		 <!-- <mapping class="com.example13.jpql.entity.User"></mapping>
+		<mapping class="com.example13.jpql.entity.Address"></mapping> -->
+		<!-- Criteria Query  -->
+		 <!-- <mapping class="com.example14.criteriaquery.entity.User"></mapping>
+		<mapping class="com.example14.criteriaquery.entity.Address"></mapping> -->
+		
+		<!-- optimistic version  -->
+		<!-- <mapping class="com.example15.optimistic.entity.User"></mapping>
+		<mapping class="com.example15.optimistic.entity.Address"></mapping> -->
+		<!-- Pessimistic  -->
+		<!-- <mapping class="com.example16.pessimistic.entity.User"></mapping> -->
+		
+		
+	</session-factory>
+</hibernate-configuration>
+
